@@ -29,10 +29,17 @@ public class StudentManagement {
                 switch (choice) {
                     case 1 -> studentBusiness.listAllStudents();
                     case 2 -> {
-                        var student = new ra.entity.Student();
-                        student.inputData(scanner);
-                        studentBusiness.addStudent(student);
-                        System.out.println("Student added successfully.");
+                        while(true) {
+                            var student = new ra.entity.Student();
+                            student.inputData(scanner);
+                            studentBusiness.addStudent(student);
+                            System.out.println("Student added successfully.");
+                            System.out.print("Do you want to add another student? (y/n): ");
+                            String continueInput = scanner.nextLine();
+                            if (!continueInput.equalsIgnoreCase("y")) {
+                                break;
+                            }
+                        }
                     }
                     case 3 -> {
                         System.out.print("Enter student ID to update: ");
