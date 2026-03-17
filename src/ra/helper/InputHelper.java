@@ -8,7 +8,7 @@ public class InputHelper {
       try {
         return Integer.parseInt(scanner.nextLine());
       } catch (NumberFormatException e) {
-        System.out.println("Invalid input. Please reenter a valid integer.");
+        throw new IllegalArgumentException("Invalid input. Please reenter a valid integer.");
       }
     }
   }
@@ -18,7 +18,7 @@ public class InputHelper {
       try {
         return Double.parseDouble(scanner.nextLine());
       } catch (NumberFormatException e) {
-        System.out.println("Invalid input. Please reenter a valid double.");
+        throw new IllegalArgumentException("Invalid input. Please reenter a valid double.");
       }
     }
   }
